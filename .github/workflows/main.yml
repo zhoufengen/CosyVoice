@@ -43,8 +43,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-pip-
 
+    - name: Grant write permissions to /mnt
+      run: |
+        sudo chmod -R 777 /mnt      
+
     - name: Create build directory on /mnt
-      run: mkdir -p /mnt/tmp
+      run: sudo mkdir -p /mnt/tmp
+
+
       
     - name: Use temporary directory
       run: export TMPDIR=/mnt/tmp
