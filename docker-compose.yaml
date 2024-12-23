@@ -1,0 +1,13 @@
+version: '3'
+services:
+  cosyvoice:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../pretrained_models:/app/pretrained_models
+    ports:
+      - "8464:50000"
+    environment:
+      - PYTHONPATH=/app/third_party/Matcha-TTS
+    command: python3 webui.py --port 50000 --model_dir pretrained_models/CosyVoice-300M-Instruct
