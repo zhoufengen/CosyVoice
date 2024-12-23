@@ -2,10 +2,10 @@ version: '3'
 services:
   cosyvoice:
     build:
-      context: ..
+      context: .
       dockerfile: docker/Dockerfile
     volumes:
-      - ../pretrained_models:/app/pretrained_models
+      - ./pretrained_models:/app/pretrained_models
     ports:
       - "8464:50000"
     environment:
