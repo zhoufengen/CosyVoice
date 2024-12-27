@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile
+    image: registry.cn-hangzhou.aliyuncs.com/sync_dockerhub/cosyvoice2:v1.0.0
     volumes:
       - ./pretrained_models:/app/pretrained_models
     ports:
